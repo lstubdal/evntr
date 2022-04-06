@@ -32,7 +32,7 @@ export default {
                 type: 'reference',
                 to: [{ type: 'host' }]
             }],
-            validation: Rule => Rule.required()
+            validation: Rule => Rule.required().error('Must fill inn host')
         },
         {
             title: 'Speaker',
@@ -41,7 +41,8 @@ export default {
             of: [{
                 type: 'reference',
                 to: [{ type: 'speaker'}]
-            }]
+            }],
+            validation: Rule => Rule.required().error('Must fill speaker')
         },
         {
             title: 'Description',
