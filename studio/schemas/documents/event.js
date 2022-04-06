@@ -8,29 +8,21 @@ export default {
             name: 'title',
             type: 'string',
             validation: Rule => [ 
-                Rule.required().min(5).error('The title needs atleast 5 characters'),
-                Rule.max(99).error('Titles with more than 99 characters are too long')
+                Rule.required().min(5).error('The title needs atleast 1 character'),
+                Rule.max(60).error('Titles with more than 60 characters are too long')
             ]
         }, 
         {
             title: 'Event image',
             name: 'eventImage',
             type: 'image',
-            validation: Rule => Rule.required()
+            validation: Rule => Rule.required().error('Event must have coverimage'),
         },
-
         {
             title: 'Time',
             name: 'time',
             type: 'datetime',
             validation: Rule => Rule.required().min(new Date())
-        },
-        {
-            title: 'Location',
-            name: 'location',
-            type: 'reference',
-            to: [{ type: 'location' }]
-
         },
         {
             title: 'Host',
@@ -55,12 +47,17 @@ export default {
             title: 'Description',
             name: 'description',
             type: 'text',
+            validation: Rule => [ 
+                Rule.required().min(20).error('The title needs atleast 20 character'),
+                Rule.max(500).error('Titles with more than 500 characters are too long')
+            ]
         },
         {
             title: 'Category',
             name: 'category',
             type: 'reference',
-            to: [{ type: 'category'}]
+            to: [{ type: 'category'}],
+            validation: Rule => Rule.required().error('Need to define category')
         },
         {
             title: 'Price',
@@ -71,20 +68,38 @@ export default {
                     title: 'Free',
                     name: 'free',
                     type: 'boolean',
+                    validation: Rule => Rule.required().error('Must define price')
                 },
                 {
                     title: 'Price amount',
                     name : 'amount',
                     type: 'number',
-                    hidden: ({ parent, boolean }) => !boolean && parent?.free
+                    hidden: ({ parent, boolean }) => !boolean && parent?.free,
+                    validation: Rule => Rule.required().error('Need to fill in price')
                 }     
             ]
         },
         {
-            title: 'Digital event',
-            name: 'digitalEvent',
-            type: 'boolean',
-            description: 'Swipe right if the event is digital'
+            title: 'Location',
+            name: 'location',
+            type: 'object',
+            fields: [
+                {
+                    title: 'Digital event',
+                    name: 'digitalEvent',
+                    type:'boolean',
+                    description: 'Swipe right if the event is digital',
+                    validation: Rule => Rule.required().error('Need to define event type')
+                },
+                {
+                    title: 'Address',
+                    name: 'address',
+                    type: 'reference',
+                    to: [{ type: 'address' }],
+                    hidden: ({ parent, boolean}) => !boolean && parent?.digitalEvent,
+                    validation: Rule => Rule.required().error('Need location if not digital')
+                }
+            ]
         },
         {
             title: 'Attendees',
@@ -92,7 +107,7 @@ export default {
             type: 'array',
             of: [{
                 type: 'reference',
-                to: [{ type: 'attendee'}]
+                to: [{ type: 'attendee'}] /* replace with string? */
             }]
         },
         {
