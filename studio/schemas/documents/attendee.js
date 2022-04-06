@@ -5,8 +5,17 @@ export default {
     fields: [
         {
             title: 'Attendee mail',
-            name: 'attendeeMail',
+            name: 'attendee',
             type: 'string'
+        },
+        {
+            title: 'Events',
+            name: 'events',
+            type: 'array',
+            of: [{
+                type: 'reference',
+                to: [{ type: 'event'}] // finne event id?
+            }],
         }
     ]
 }

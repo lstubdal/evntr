@@ -50,7 +50,7 @@ export default {
             type: 'text',
             validation: Rule => [ 
                 Rule.required().min(20).error('The title needs atleast 20 character'),
-                Rule.max(500).error('Titles with more than 500 characters are too long')
+                Rule.max(1000).error('Titles with more than 500 characters are too long')
             ]
         },
         {
@@ -108,10 +108,13 @@ export default {
             type: 'array',
             of: [{
                 type: 'reference',
-                to: [{ type: 'attendee'}] /* replace with string? */
-            }]
-        },
-        {
+                to: [{ type: 'attendee'}] 
+            }],
+            readOnly: ({ currentUser }) => {
+                return !(currentUser.roles.find(({name}) => name === 'viewer'));
+            }
+            
+    /*        {
             title: 'Slug',
             name: 'slug',
             type: 'slug',
@@ -122,6 +125,8 @@ export default {
                                     .replace(/\s+/g, '-')
                                     .slice(0, 200)
             }
-        }
+        }, */
+           
+        },
     ]
 }
