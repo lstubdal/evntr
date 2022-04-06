@@ -6,6 +6,7 @@ import location from './documents/location.js'
 import host from './documents/host.js'
 import category from './documents/category.js'
 import speaker from './documents/speaker.js'
+import attendee from './documents/attendee.js'
 
 export default createSchema({
   name: 'default',
@@ -14,6 +15,7 @@ export default createSchema({
     location,
     host,
     category,
-    speaker
+    speaker,
+    attendee
   ]),
 })

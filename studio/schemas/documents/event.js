@@ -65,13 +65,47 @@ export default {
         {
             title: 'Price',
             name: 'price',
-            type: 'number'
+            type: 'object',
+            fields: [
+                {
+                    title: 'Free',
+                    name: 'free',
+                    type: 'boolean',
+                },
+                {
+                    title: 'Price amount',
+                    name : 'amount',
+                    type: 'number',
+                    hidden: ({ parent, boolean }) => !boolean && parent?.free
+                }     
+            ]
         },
         {
             title: 'Digital event',
             name: 'digitalEvent',
             type: 'boolean',
             description: 'Swipe right if the event is digital'
+        },
+        {
+            title: 'Attendees',
+            name: 'attendees',
+            type: 'array',
+            of: [{
+                type: 'reference',
+                to: [{ type: 'attendee'}]
+            }]
+        },
+        {
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+                slugify: input => input
+                                    .toLowerCase()
+                                    .replace(/\s+/g, '-')
+                                    .slice(0, 200)
+            }
         }
     ]
 }
