@@ -6,23 +6,31 @@ export default {
         {
             title: 'Title',
             name: 'title',
-            type: 'string'
+            type: 'string',
+            validation: Rule => [ 
+                Rule.required().min(5).error('The title needs atleast 5 characters'),
+                Rule.max(99).error('Titles with more than 99 characters are too long')
+            ]
         }, 
         {
             title: 'Event image',
             name: 'eventImage',
-            type: 'image'
+            type: 'image',
+            validation: Rule => Rule.required()
         },
+
         {
             title: 'Time',
             name: 'time',
-            type: 'datetime'
+            type: 'datetime',
+            validation: Rule => Rule.required().min(new Date())
         },
         {
             title: 'Location',
             name: 'location',
             type: 'reference',
             to: [{ type: 'location' }]
+
         },
         {
             title: 'Host',
@@ -31,7 +39,8 @@ export default {
             of: [{
                 type: 'reference',
                 to: [{ type: 'host' }]
-            }]  
+            }],
+            validation: Rule => Rule.required()
         },
         {
             title: 'Speaker',
