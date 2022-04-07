@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Events"
+        android:id="@+id/eventFragment"
+        android:icon="@drawable/events"/>
+    <item android:title="Favorites"
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/favorites"/>
+    <item android:title="Profile"
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile"/>
+
+</menu>
