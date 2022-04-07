@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.codex.evntr.API.fetchedEvent
+import com.codex.evntr.API.Event
 import com.codex.evntr.R
 import com.squareup.picasso.Picasso
 
 class EventAdapter(
-    private val dataset: List<fetchedEvent>
+    private val dataset: List<Event>
 ) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     inner class EventViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -41,12 +41,21 @@ class EventAdapter(
         val event = dataset[position]
 
         holder.title.text = event.title
-        holder.category.text = event.category
+        holder.category.text = event.category.type
         holder.time.text = event.time
-        holder.location.text = event.location
-        holder.price.text = event.price
-        holder.speaker.text = event.speaker
-        Picasso.with(holder.image.context).load(event.eventImage).into(holder.image)
+        if (event.digitalEvent == true) {
+            holder.price.text = "GRATIS"
+            holder.location.text = "Online"
+        } else {
+            holder.price.text = event.price.amount?.toString()
+            holder.location.text = event.location?.address
+        }
+        var speakers = ""
+        for (speaker in event.speaker) {
+            speakers += speaker.name
+        }
+        holder.speaker.text = speakers
+        Picasso.with(holder.image.context).load(event.eventImage.asset.url).into(holder.image)
 
     }
 

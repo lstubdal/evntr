@@ -8,7 +8,7 @@
     android:padding="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/color_round"
+        android:id="@+id/cards"
         android:layout_width="400dp"
         android:layout_height="159dp"
         android:background="@color/white"

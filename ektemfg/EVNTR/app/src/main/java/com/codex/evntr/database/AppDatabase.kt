@@ -5,11 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.codex.evntr.database.Event
-import com.codex.evntr.database.EventDAO
+import com.codex.evntr.API.Event
 
 @Database(entities = [Event::class], version = 1, exportSchema = false)
-
+@TypeConverters(com.codex.evntr.database.TypeConverters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun eventDao(): EventDAO
 
