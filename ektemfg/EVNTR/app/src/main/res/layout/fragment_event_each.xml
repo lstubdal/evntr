@@ -1,140 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Event.EventEach">
 
 
+    <Button
+        android:id="@+id/eachEvent_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:text="TILBAKE"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/profile_text"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/each_picture"
-        android:layout_width="386dp"
-        android:layout_height="178dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_launcher_foreground" />
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:layout_marginTop="24dp" />
 
     <TextView
         android:id="@+id/each_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="46dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintTop_toBottomOf="@+id/each_picture"
-        tools:layout_editor_absoluteX="146dp"
-        tools:text="TITLE" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/each_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:gravity="center"
+        android:textAlignment="center"
         android:textColor="#3551EF"
         android:textSize="26dp"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="320dp"
-        tools:text="TIME" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/each_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/each_title"
-        tools:text="PLCAE/LOCATION" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/each_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
         android:gravity="center"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="595dp"
-        tools:text="PRICE" />
-
-    <TextView
-        android:id="@+id/each_going"
-        android:layout_width="55dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="171dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/each_price"
-        tools:text="♥" />
-
-    <TextView
-        android:id="@+id/textView_Desciption_Details"
-        android:layout_width="380dp"
-        android:layout_height="129dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/each_speaker"
-        tools:text="DESCRIPTION" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/each_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="379dp"
+        android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="357dp"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="436dp"
-        tools:text="TYPE" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/each_speaker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
         android:gravity="center"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="414dp"
-        tools:text="HOST" />
+        android:textStyle="bold|italic" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MED SELVESTE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="378dp" />
+        android:id="@+id/each_going"
+        android:layout_width="147dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="171dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold|italic" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

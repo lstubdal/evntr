@@ -1,142 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
-    android:padding="3dp">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cards"
-        android:layout_width="400dp"
-        android:layout_height="159dp"
-        android:background="@color/white"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="3dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:divider="@android:drawable/button_onoff_indicator_on"
+        android:orientation="vertical"
+        android:showDividers="beginning">
 
         <ImageView
             android:id="@+id/event_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxHeight="160dp"
-            app:layout_constraintBottom_toTopOf="@+id/event_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true" />
+
 
         <TextView
             android:id="@+id/event_title"
-            android:layout_width="wrap_content"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="381dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Der hvor vi laxern, duvet." />
+            android:layout_margin="8dp"
+            android:text="BESTE EVENTET"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
-        <TextView
-            android:id="@+id/event_desc"
-            android:layout_width="280dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="299dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/black"
-            android:textSize="8sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintBottom_toTopOf="@+id/event_time"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Der hvor vi laxern, duvet." />
-
-        <TextView
-            android:id="@+id/event_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="327dp"
-            android:textColor="#F44336"
-            android:textSize="10sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="68dp"
-            tools:text="Dag, dato, tid" />
 
         <TextView
             android:id="@+id/event_speaker"
-            android:layout_width="wrap_content"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#514A4A"
-            android:textSize="10sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="82dp"
-            tools:text="Dimitrije Pesic" />
+            android:layout_margin="8dp"
+            android:text="BESTE EVENTET"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
         <TextView
             android:id="@+id/event_location"
-            android:layout_width="wrap_content"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="186dp"
-            android:textColor="#514A4A"
-            android:textSize="10sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toStartOf="@+id/event_card_favorite"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="96dp"
-            tools:text="Rommet, der dimmi bor." />
+            android:layout_margin="8dp"
+            android:text="Fagskolen Kristiania, Storgata BRATE 34, OSLO"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
         <TextView
-            android:id="@+id/event_price"
-            android:layout_width="wrap_content"
+            android:id="@+id/event_time"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="346dp"
-            android:paddingBottom="10dp"
-            android:textColor="#514A4A"
-            android:textSize="10sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="110dp"
-            tools:text="420 NOK" />
+            android:layout_margin="8dp"
+            android:text="Tirsdag, 18. April, 2022"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+        <TextView
+            android:id="@+id/event_desc"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="382dp"
+            android:layout_height="118dp"
+            android:layout_margin="8dp"
+            android:text="Every year, universities and colleges from all over the country invite to Girls and Technology Inspiration Day in February. If you are in high school and are curious about a technology education, this is the day for you!"
+            android:textColor="#000000"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
         <TextView
             android:id="@+id/event_card_favorite"
-            android:layout_width="wrap_content"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="379dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="52dp"
-            android:layout_marginBottom="48dp"
-            android:text="♥"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_margin="8dp"
+            android:background="#298E4E"
+            android:shadowColor="#040303"
+            android:text="JOIN ♥ EVENT"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp" />
 
-        <TextView
-            android:id="@+id/event_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="326dp"
-            android:text="devOPS"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/event_price" />
+    </LinearLayout>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

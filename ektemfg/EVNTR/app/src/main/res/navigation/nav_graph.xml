@@ -11,10 +11,16 @@
         android:label="fragment_event"
         tools:layout="@layout/fragment_events" >
         <action
+            android:id="@+id/action_eventFragment_to_eventEach"
+            app:destination="@id/eventEach" />
+        <action
             android:id="@+id/action_eventFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
         <action
             android:id="@+id/action_eventFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_eventFragment_to_profileFragment2"
             app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_eventFragment_self"
@@ -26,9 +32,6 @@
         android:name="com.codex.evntr.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" >
-        <action
-            android:id="@+id/action_favoriteFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_favoriteFragment_to_eventFragment"
             app:destination="@id/eventFragment" />
@@ -42,16 +45,29 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_eventFragment"
-            app:destination="@id/eventFragment" />
-        <action
             android:id="@+id/action_profileFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventEach"
+        android:name="com.codex.evntr.Event.EventEach"
+        android:label="fragment_event_each"
+        tools:layout="@layout/fragment_event_each" >
+        <argument
+            android:name="thisEventID"
+            app:argType="string" />
         <action
-            android:id="@+id/action_profileFragment_to_eventFragment2"
+            android:id="@+id/action_eventEach_to_eventFragment"
             app:destination="@id/eventFragment" />
         <action
-            android:id="@+id/action_profileFragment_self"
+            android:id="@+id/action_eventEach_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_eventEach_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.codex.evntr.MainActivity"
+        android:label="MainActivity" />
 </navigation>

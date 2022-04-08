@@ -38,11 +38,16 @@ data class Category (
     )
 
     data class Location (
-        var address : String?,
+        var address : Address?,
         var digitalEvent: Boolean? = null
     )
 
-    data class Price (
+class Address (
+var city: String,
+        var streetAddress: String
+)
+
+data class Price (
         var amount: Int? = null,
         var free: Boolean?
 
